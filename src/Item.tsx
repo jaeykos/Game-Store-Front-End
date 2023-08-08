@@ -17,8 +17,8 @@ const Item = () => {
   useEffect(() => {
     try {
       localStorage.setItem("cartGames", JSON.stringify(cartGames))
-    } catch (e) {
-      console.error(e)
+    } catch {
+      console.error()
     }
   }, [cartGames])
 
