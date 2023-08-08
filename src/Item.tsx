@@ -18,7 +18,7 @@ const Item = () => {
     try {
       localStorage.setItem("cartGames", JSON.stringify(cartGames))
     } catch {
-      console.error()
+      alert("soemthing went wrong")
     }
   }, [cartGames])
 
