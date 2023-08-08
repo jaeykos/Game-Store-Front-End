@@ -1,0 +1,13 @@
+.slider {
+  max-width: 100%;
+}
+
+.sliderContainer {
+  max-height: 100%;
+  width: fit-content;
+  justify-self: center;
+}
+
+.sliderImg {
+  max-height: 50vh;
+}
