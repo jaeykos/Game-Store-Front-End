@@ -15,7 +15,11 @@ const Item = () => {
     JSON.parse(localStorage.getItem("cartGames")!)
   )
   useEffect(() => {
-    localStorage.setItem("cartGames", JSON.stringify(cartGames))
+    try {
+      localStorage.setItem("cartGames", JSON.stringify(cartGames))
+    } catch (e) {
+      console.error(e)
+    }
   }, [cartGames])
 
   useEffect(() => {

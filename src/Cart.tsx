@@ -8,7 +8,11 @@ const Cart = () => {
     JSON.parse(localStorage.getItem("cartGames")!)
   )
   useEffect(() => {
-    localStorage.setItem("cartGames", JSON.stringify(cartGames))
+    try {
+      localStorage.setItem("cartGames", JSON.stringify(cartGames))
+    } catch {
+      console.error()
+    }
   }, [cartGames])
 
   return (
