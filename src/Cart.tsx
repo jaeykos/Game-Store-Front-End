@@ -4,15 +4,15 @@ import { Game } from "./game"
 import { useState, useEffect } from "react"
 
 const Cart = () => {
+  if (localStorage.getItem("cartGames") === null) {
+    localStorage.setItem("cartGames", JSON.stringify([]))
+  }
+
   const [cartGames, setCartGames] = useState(
     JSON.parse(localStorage.getItem("cartGames")!)
   )
   useEffect(() => {
-    try {
-      localStorage.setItem("cartGames", JSON.stringify(cartGames))
-    } catch {
-      alert("something went wrong")
-    }
+    localStorage.setItem("cartGames", JSON.stringify(cartGames))
   }, [cartGames])
 
   return (

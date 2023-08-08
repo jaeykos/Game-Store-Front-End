@@ -14,12 +14,13 @@ const Item = () => {
   const [cartGames, setCartGames] = useState(
     JSON.parse(localStorage.getItem("cartGames")!)
   )
+
+  if (localStorage.getItem("cartGames") === null) {
+    localStorage.setItem("cartGames", JSON.stringify([]))
+  }
+
   useEffect(() => {
-    try {
-      localStorage.setItem("cartGames", JSON.stringify(cartGames))
-    } catch {
-      alert("soemthing went wrong")
-    }
+    localStorage.setItem("cartGames", JSON.stringify(cartGames))
   }, [cartGames])
 
   useEffect(() => {
